@@ -6,26 +6,26 @@
 }
 
 :root {
-    --primary-color: #00d4ff;
-    --secondary-color: #0099cc;
+    --primary-color: #00ffe7;
+    --secondary-color: #00bfff;
     --accent-color: #ff6b35;
-    --dark-bg: #0a0a0a;
-    --darker-bg: #050505;
-    --card-bg: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
+    --dark-bg: #10131a;
+    --darker-bg: #0a0d13;
+    --card-bg: #181c25;
+    --text-primary: #e0e6ed;
+    --text-secondary: #7fd7ff;
     --text-muted: #666666;
     --border-color: #333333;
-    --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+    --gradient-primary: linear-gradient(135deg, #00ffe7 0%, #00bfff 100%);
     --gradient-secondary: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.4);
+    --shadow: 0 10px 30px rgba(0, 255, 231, 0.08);
+    --shadow-hover: 0 20px 40px rgba(0, 191, 255, 0.15);
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text-primary);
+    background: #10131a;
+    color: #e0e6ed;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -269,14 +269,15 @@ section {
 }
 
 .section-title {
-    text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 0 8px #00ffe7, 0 0 2px #00bfff;
+    letter-spacing: 1px;
 }
 
 /* About Section */
@@ -452,30 +453,39 @@ section {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
 
 .skill-category {
     background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
+    border-radius: 14px;
     box-shadow: var(--shadow);
+    padding: 2rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s, border 0.3s;
+}
+
+.skill-category:hover {
+    box-shadow: var(--shadow-hover);
+    border: 1.5px solid var(--primary-color);
 }
 
 .skill-category h3 {
-    color: var(--primary-color);
-    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    text-shadow: 0 0 6px #00ffe7;
 }
 
 .skill-category h3 i {
-    font-size: 1.1rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 8px #00ffe7;
 }
 
 .skill-tags {
@@ -485,19 +495,20 @@ section {
 }
 
 .skill-tag {
-    background: rgba(0, 212, 255, 0.1);
-    color: var(--primary-color);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    transition: all 0.3s ease;
+    background: var(--gradient-primary);
+    color: #10131a;
+    border-radius: 8px;
+    padding: 0.4em 1em;
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    box-shadow: 0 0 8px #00ffe733, 0 0 2px #00bfff33;
+    transition: background 0.3s, color 0.3s;
 }
 
 .skill-tag:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
+    background: var(--gradient-secondary);
+    color: #fff;
 }
 
 /* Certifications Section */
@@ -860,4 +871,31 @@ html {
 
 p {
     text-align: justify;
+}
+
+/* Dual Focus Section Headers */
+.dual-focus {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.dual-focus .focus-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 12px #00ffe7, 0 0 2px #00bfff;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.dual-focus .focus-item i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
 } 
